@@ -29,9 +29,10 @@ def censor(value):
 
 
 @register.filter(name='preview')
-
+# первый аргумент здесь это то значение, к которому надо применить фильтр, второй аргумент — это аргумент фильтра,
+# т. е. в шаблоне будет примерно следующее - value|multiply:arg
 def preview(value):
-    if len(value) > 10:
+    if len(value) > 50:
         return value[:51] + '...'
     else:
         return value
